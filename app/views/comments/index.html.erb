@@ -10,5 +10,25 @@
     </p>
   <% end %>
 </div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Num Empleado</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Mail</th>
+      <th scope="col">Manager</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%@comment.each do |comentario|%>
+      <tr>
+        <th scope="row"><%= comentario.id%></th>
+        <td><%= comentario.content%></td>
+        <td><%= comentario.user.email%></td>
+        <td><%= comentario.news.description%></td>
+      </tr>
+    <%end%>
+  </tbody>
+</table>
 
 <%= link_to "New comment", new_comment_path %>

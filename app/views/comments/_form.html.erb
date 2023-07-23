@@ -22,9 +22,10 @@
   </div>
 
   <div>
-    <%= form.label :news_id, style: "display: block" %>
-    <%= form.text_field :news_id %>
-  </div>
+  <%= form.label :news_id, "Seleccionar publicacion", style: "display: block" %>
+  <%= form.collection_select :news_id, News.all, :id, :title, { prompt: "Seleccione una publicacion" } %>
+</div>
+
 
   <div>
     <%= form.submit %>
